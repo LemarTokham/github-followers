@@ -1,6 +1,7 @@
 # GitHub API Project
-Interacts with the GitHub API to perform various operations such as returning how many repos the user has or whether or not they follow another specified GitHub user.
+Interacts with the GitHub API to perform various operations such as returning how many repos the user has, whether or not they follow another specified GitHub user, checking which one of their followers doesn't follow them back.
 
+YOU WILL NEED A GITHUB OAuth credentials
 # Setup
 1. Clone this repo
 2. Create a virtual environment and activate it
