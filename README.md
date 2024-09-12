@@ -2,6 +2,8 @@
 Interacts with the GitHub API to perform various operations such as returning how many repos the user has, whether or not they follow another specified GitHub user, checking which one of their followers doesn't follow them back.
 
 YOU WILL NEED GITHUB OAuth credentials
+if you don't know how to follow this guide:
+https://docs.github.com/en/apps/oauth-apps/building-oauth-apps/creating-an-oauth-app 
 # Setup
 1. Clone this repo
 2. Create a virtual environment and activate it
