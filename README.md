@@ -6,10 +6,11 @@ Interacts with the GitHub API to perform various operations such as returning ho
 2. Create a virtual environment and activate it
 3. Install required packages: `pip install -r requirements.txt` 
 4. Obtain Github OAuth Credentials:
-    - Go to GitHub Settings -> Developer Settings -> OAuth Apps -> New OAuth App
+    - Go to **GitHub Settings** -> **Developer Settings** -> **OAuth Apps** -> **New OAuth App**
     - Give your application a name
-    - Set homepage URL to `http://localhost:8000` or whatever local server you want it to run on
-    - Set Authorization callback URL to `https://httpbin.org/anything`
+    - Set "Homepage URL" to `http://localhost:8000` or whatever local server you want it to run on
+    - Set "Authorization callback URL" to `https://httpbin.org/anything`
+    - Click **Register application**
 5. Create a `.env` file with your GitHub Client ID and Secret key
     Structure of .env:
     - CLIENT_ID=your_client_id_here
