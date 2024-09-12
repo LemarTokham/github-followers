@@ -109,9 +109,9 @@ def compare_following_followers(following_you, your_followers):
 
 
 users_you_follow = get_your_followers()
-print(f"Following: {len(users_you_follow)}")
+print(f"Followers: {len(users_you_follow)}")
 your_followers = get_your_following()
-print(f"Followers: {len(your_followers)}")
+print(f"Following: {len(your_followers)}")
 not_following_back = compare_following_followers(following_you=users_you_follow, your_followers=your_followers)
 for user in not_following_back:
     print(f"{user} doesn't follow you back :(")
