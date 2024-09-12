@@ -8,3 +8,6 @@ YOU WILL NEED GITHUB OAuth credentials
 3. Install required package: `pip install -r requirements.txt`
 4. Create a `.env` file with your GitHub Client ID and Secret key
 5. Run the script: `python3 app.py`
+
+**Notes**
+Further organisation of the code is underway, will make separate files with the different functionalities.
