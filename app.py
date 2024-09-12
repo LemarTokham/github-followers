@@ -54,8 +54,12 @@ def print_user_info(access_token=None):
     name = response["name"]
     username = response["login"]
     public_repos_count = response["public_repos"]
+    private_repos_count = response["total_private_repos"]
     print(
         f"{name} ({username}) | public repositories: {public_repos_count}"
+    )
+    print(
+        f"{name} ({username}) | private repositories: {private_repos_count}"
     )
 
 print_user_info(access_token=access_token)
@@ -71,3 +75,44 @@ def check_following(username):
 user = input("Enter User: ")
 check_following(user)
 
+
+# Check who you follow
+def get_your_following():
+    endpoint = f'https://api.github.com/users/LemarTokham/following'
+    response = requests.get(endpoint).json()
+    following_amount = len(response)
+    following_users = []
+    for i in range(following_amount):
+        following = response[i]["login"]
+        following_users.append(following)
+    return following_users
+
+# Check who follows you
+def get_your_followers():
+    endpoint = f'https://api.github.com/users/LemarTokham/followers'
+    response = requests.get(endpoint).json()
+    followers_amount = len(response)
+    follower_users = []
+    for i in range(followers_amount):
+        follower = response[i]["login"]
+        follower_users.append(follower)
+    return follower_users
+
+
+def compare_following_followers(following_you, your_followers):
+    not_following_back = []
+    for follower in your_followers:
+        if follower not in following_you:
+            not_following_back.append(follower)
+    return not_following_back
+
+
+
+users_you_follow = get_your_followers()
+print(f"Following: {len(users_you_follow)}")
+your_followers = get_your_following()
+print(f"Followers: {len(your_followers)}")
+not_following_back = compare_following_followers(following_you=users_you_follow, your_followers=your_followers)
+for user in not_following_back:
+    print(f"{user} doesn't follow you back :(")
+            
